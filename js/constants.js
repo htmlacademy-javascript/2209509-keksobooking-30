@@ -12,11 +12,11 @@ export const TITLES = [
 ];
 
 export const TYPE = [
-  'palace',
-  'flat',
-  'house',
-  'bungalow',
-  ' hotel',
+  'place: Дворец',
+  'flat: Квартира',
+  'house: Дом',
+  'bungalow: Бунгало',
+  'hotel: Отель',
 ];
 
 export const CHECKIN = [

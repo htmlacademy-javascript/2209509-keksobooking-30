@@ -19,7 +19,13 @@
     <section class="map">
 
       <!-- Блок для вставки карты -->
-      <div class="map__canvas" id="map-canvas"></div>
+      <div class="map__canvas" id="map-canvas">
+        <script type="module" src="js/map.js"></script>
+        <div id="map" style="width: 640px; height: 480px;"></div>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+      </div>
 
       <!-- Фильтрация объявлений -->
       <div class="map__filters-container">
@@ -190,7 +196,7 @@
   </footer>
 
   <!-- Карточка объявления -->
-  <template id="card">
+  <template id="card" class="card">
     <article class="popup">
       <img src="img/avatars/user01.png" class="popup__avatar" width="70" height="70" alt="Аватар пользователя">
       <h3 class="popup__title">Уютное гнездышко для молодоженов</h3>
@@ -232,4 +238,5 @@
 </body>
 
 <script type="module" src="js/main.js"></script>
+<script type="module" src="js/thumbnaiil.js"></script>
 </html>

@@ -1,7 +1,7 @@
-import {getRandomInteger} from './get-random-integer.js';
 import {author} from './author.js';
 import {offer} from './offer.js';
 import {location} from './location.js';
+import {renderThumbnails} from './thumbnaiil.js';
 
 const similarAuthor = () => Array.from(
   { length: 1 },
@@ -30,6 +30,8 @@ const similarObject = () => {
   };
 };
 
-export const similarArrey = Array.from({length: getRandomInteger(1, 10)}, similarObject);
+export const similarArrey = () => Array.from({length: 10}, similarObject);
+
+renderThumbnails(similarArrey());
 
 //console.log(similarArrey);

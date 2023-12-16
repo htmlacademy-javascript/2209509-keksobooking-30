@@ -4,6 +4,6 @@ export const author = () => {
   const randomAuthorIndex = getRandomInteger(1, 10);
 
   return {
-    avatar: String(`img/avatars/user${ randomAuthorIndex }.png`),
+    avatar: (`img/avatars/user${ 0 + randomAuthorIndex }.png`),
   };
 };
