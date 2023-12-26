@@ -23,7 +23,7 @@ export const offer = () => {
     guests: randomGuestsIndex,
     checkin: CHECKIN[randomCheckinIndex],
     checkout: CHECKOUT[randomCheckoutIndex],
-    features: similarFeatures,
+    features: similarFeatures(),
     photos: similarPhotos,
     description: DESCRIPTION[randomDescriptionIndex]
   };

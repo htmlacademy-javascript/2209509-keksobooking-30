@@ -4,9 +4,7 @@ import { getRandomInteger } from './get-random-integer';
 export const createFeatures = () => {
   const randomFeaturesIndex = getRandomInteger(0, FEATURES.length - 1);
 
-  return {
-    features: FEATURES[randomFeaturesIndex],
-  };
+  return FEATURES[randomFeaturesIndex];
 };
 
-export const similarFeatures = Array.from({length: getRandomInteger(1, 5)}, createFeatures);
+export const similarFeatures = () => Array.from({length: getRandomInteger(1, 5)}, createFeatures);

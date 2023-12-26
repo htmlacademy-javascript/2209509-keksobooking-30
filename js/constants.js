@@ -11,13 +11,13 @@ export const TITLES = [
   'Дом в городе',
 ];
 
-export const TYPE = [
-  'place: Дворец',
-  'flat: Квартира',
-  'house: Дом',
-  'bungalow: Бунгало',
-  'hotel: Отель',
-];
+export const TYPE = {
+  place: 'Дворец',
+  flat: 'Квартира',
+  house: 'Дом',
+  bungalow: 'Бунгало',
+  hotel: 'Отель',
+};
 
 export const CHECKIN = [
   '12:00',

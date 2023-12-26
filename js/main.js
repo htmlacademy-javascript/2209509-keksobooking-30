@@ -3,20 +3,11 @@ import {offer} from './offer.js';
 import {location} from './location.js';
 import {renderThumbnails} from './thumbnaiil.js';
 
-const similarAuthor = () => Array.from(
-  { length: 1 },
-  (_, pictureIndex) => author(pictureIndex + 1),
-);
+const similarAuthor = () => (author());
 
-const similarOffer = () => Array.from(
-  { length: 1 },
-  (_, pictureIndex) => offer(pictureIndex + 1),
-);
+const similarOffer = () => offer();
 
-const similarLocation = () => Array.from(
-  { length: 1 },
-  (_, pictureIndex) => location(pictureIndex + 1),
-);
+const similarLocation = () => location();
 
 const similarObject = () => {
   const authorIndex = similarAuthor();
@@ -30,8 +21,8 @@ const similarObject = () => {
   };
 };
 
-export const similarArrey = () => Array.from({length: 10}, similarObject);
+export const similarArray = () => Array.from({length: 10}, similarObject);
 
-renderThumbnails(similarArrey());
+renderThumbnails(similarArray());
 
-//console.log(similarArrey);
+console.log(similarArray);
