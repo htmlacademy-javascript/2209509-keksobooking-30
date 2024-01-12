@@ -1,3 +1,5 @@
+import {createModal} from './server.js';
+
 const mainForm = document.querySelector('.ad-form');
 const titleOffer = document.getElementById('title');
 const priceOffer = document.getElementById('price');
@@ -116,3 +118,9 @@ mainForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
   }
 });
+
+export const openModal = () => {
+  if (!pristine.validate(true)) {
+    return createModal;
+  }
+};

@@ -1,4 +1,4 @@
-import {TITLES} from './constants.js';
+import {fetchResult} from './server.js';
 
 const TILE_LAYER = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const COPYRIGHT = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
@@ -12,8 +12,8 @@ const iconConfig = {
 };
 
 const startCoordinate = {
-  lat: 59.96831,
-  lng: 30.31748,
+  lat: 	35.6895,
+  lng: 139.692,
 };
 
 const map = L.map('map').setView(startCoordinate, ZOOM);
@@ -41,24 +41,36 @@ mainPinMarker.on('moveend', (evt) => {
 
 const points = [
   {
-    title: TITLES,
-    lat: 59.96925,
-    lng: 30.31730,
+    title: fetchResult,
+    url: './img/pin.svg',
+    width: 40,
+    height: 40,
+    lat: 	35.6835,
+    lng: 139.692,
   },
   {
-    title: TITLES,
-    lat: 59.96783,
-    lng: 30.31258,
+    title: fetchResult,
+    url: './img/pin.svg',
+    width: 40,
+    height: 40,
+    lat: 	35.6895,
+    lng: 139.392,
   },
   {
-    title: TITLES,
-    lat: 59.95958,
-    lng: 30.30228,
+    title: fetchResult,
+    url: './img/pin.svg',
+    width: 40,
+    height: 40,
+    lat: 	35.6895,
+    lng: 139.652,
   },
   {
-    title: TITLES,
-    lat: 59.97292,
-    lng: 30.31982,
+    title: fetchResult,
+    url: './img/pin.svg',
+    width: 40,
+    height: 40,
+    lat: 	35.6895,
+    lng: 139.92,
   },
 ];
 

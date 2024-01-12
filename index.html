@@ -175,7 +175,7 @@
           <label class="ad-form__label">Фотография жилья</label>
           <div class="ad-form__photo-container">
             <div class="ad-form__upload">
-              <input type="file" id="images" name="images" class="ad-form__input visually-hidden">
+              <input type="file" id="images" name="images" class="ad-form__input visually-hidden" onchange="processFiles(files)">
               <label for="images" class="ad-form__drop-zone">Загрузить<br>фото...</label>
             </div>
             <div class="ad-form__photo"></div>
@@ -247,6 +247,9 @@
 <script type="module" src="js/main.js"></script>
 <script type="module" src="js/thumbnaiil.js"></script>
 <script type="module" src="js/validation.js"></script>
+<script type="module" src="js/server.js"></script>
+<script type="module" src="js/photo-upload.js"></script>
+<script type="module" src="js/form.js"></script>
 <script src="vendor/leaflet/leaflet.js"></script>
 <script src="./vendor/pristine/pristine.min.js"></script>
 </html>
