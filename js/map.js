@@ -16,7 +16,7 @@ const startCoordinate = {
   lng: 139.692,
 };
 
-const map = L.map('map').setView(startCoordinate, ZOOM);
+export const map = L.map('map').setView(startCoordinate, ZOOM);
 
 L.tileLayer(TILE_LAYER, {
   attribution: COPYRIGHT
@@ -74,7 +74,7 @@ const points = [
   },
 ];
 
-const createCustomPopup = (point) => {
+export const createCustomPopup = (point) => {
   const balloonTemplate = document.querySelector('#balloon').content.querySelector('.balloon');
   const popupElement = balloonTemplate.cloneNode(true);
 

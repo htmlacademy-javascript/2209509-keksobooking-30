@@ -1,4 +1,4 @@
-/*document.querySelector('#images');
+document.querySelector('#images');
 const getPhoto = document.querySelector('.ad-form__photo');
 
 export function processFiles(files) {
@@ -12,4 +12,4 @@ export function processFiles(files) {
   reader.readAsText(file);
 }
 
-processFiles();*/
+processFiles();

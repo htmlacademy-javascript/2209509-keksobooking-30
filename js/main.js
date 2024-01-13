@@ -2,6 +2,8 @@ import {author} from './author.js';
 import {offer} from './offer.js';
 import {location} from './location.js';
 import {renderThumbnails} from './thumbnaiil.js';
+import {createModal} from './server.js';
+import {formDisabled} from './form.js';
 
 const similarAuthor = () => (author());
 
@@ -24,5 +26,7 @@ const similarObject = () => {
 export const similarArray = () => Array.from({length: 10}, similarObject);
 
 renderThumbnails(similarArray());
+createModal();
+formDisabled();
 
 console.log(similarArray);
