@@ -3,8 +3,11 @@ import {offer} from './offer.js';
 import {location} from './location.js';
 import {renderThumbnails} from './thumbnaiil.js';
 import {createModal, fetchResult} from './server.js';
-//import {formDisabled} from './form.js';
+import {formDisabled} from './form.js';
 import {initMap} from './map.js';
+import {initPictures, initAvatar} from './photo-upload.js';
+import './slider.js';
+import './validation.js';
 
 const similarAuthor = () => (author());
 
@@ -28,7 +31,9 @@ export const similarArray = () => Array.from({length: 10}, similarObject);
 
 renderThumbnails(similarArray());
 createModal();
-//formDisabled();
+formDisabled();
+initPictures();
+initAvatar();
 
 console.log(similarArray);
 

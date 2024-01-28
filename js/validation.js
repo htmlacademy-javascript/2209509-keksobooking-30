@@ -1,9 +1,8 @@
-import {createModal} from './server.js';
-
 const mainForm = document.querySelector('.ad-form');
 const titleOffer = document.getElementById('title');
 const priceOffer = document.getElementById('price');
 const typeOffer = document.getElementById('type');
+import {showSuccess, showError} from './succes';
 priceOffer.placeholder = '1000';
 
 let MIN_PRICE = 1000;
@@ -114,13 +113,12 @@ pristine.addValidator(
 );
 
 mainForm.addEventListener('submit', (evt) => {
-  if (!pristine.validate()) {
-    evt.preventDefault();
+  evt.preventDefault();
+  const valid = pristine.validate();
+  if (valid) {
+    showSuccess();
+  } else {
+    showError();
   }
 });
 
-export const openModal = () => {
-  if (!pristine.validate(true)) {
-    return createModal;
-  }
-};

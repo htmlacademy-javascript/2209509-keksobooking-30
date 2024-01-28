@@ -1,4 +1,4 @@
-export const fetchResult = fetch('https://30.javascript.pages.academy/keksobooking/data')
+export const fetchResult = fetch('https://30.javascript.htmlacademy.pro/keksobooking/data')
   .then((response) => {
     if (response.ok) {
       return response;
