@@ -17,6 +17,7 @@ filterOffers();
 debounce();
 
 fetchResult
+  // eslint-disable-next-line arrow-parens
   .then(res => {
     initMap(res);
   });
