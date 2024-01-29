@@ -1,5 +1,4 @@
 export const initMap = (points) => {
-  console.log('initMap', points);
   const TILE_LAYER = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
   const COPYRIGHT = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
   const ZOOM = 16;
@@ -12,8 +11,8 @@ export const initMap = (points) => {
   };
 
   const startCoordinate = {
-    lat: 	35.6895,
-    lng: 139.692,
+    lat: 	35.682119472193015,
+    lng: 139.73270416259768,
   };
 
   const map = L.map('map').setView(startCoordinate, ZOOM);
@@ -36,7 +35,7 @@ export const initMap = (points) => {
   mainPinMarker.addTo(map);
 
   mainPinMarker.on('moveend', (evt) => {
-    console.log(evt.target.getLatLng());
+    document.querySelector('#address').value = `${evt.target.getLatLng().lng}, ${evt.target.getLatLng().lat}`;
   });
 
 
@@ -50,7 +49,7 @@ export const initMap = (points) => {
     return popupElement;
   };
 
-  points.forEach((point) => {
+  points.slice(0, 10).forEach((point) => {
     const {lat, lng} = point.location;
     const marker = L.marker(
       {
@@ -66,3 +65,4 @@ export const initMap = (points) => {
       .bindPopup(createCustomPopup(point));
   });
 };
+

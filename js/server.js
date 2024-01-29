@@ -6,8 +6,7 @@ export const fetchResult = fetch('https://30.javascript.htmlacademy.pro/keksoboo
 
     throw new Error(`${response.status} — ${response.statusText}`);
   })
-  .then((response) => response.json())
-  .catch((error) => console.log(error));
+  .then((response) => response.json());
 
 export const createModal = () => {
   const ModalTemplate = document.querySelector('#success').content.querySelector('.success');

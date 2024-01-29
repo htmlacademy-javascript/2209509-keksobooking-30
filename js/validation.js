@@ -26,6 +26,13 @@ typeOffer.addEventListener('change', () => {
   }
 });
 
+const roomOption = {
+  1: ['1'],
+  2: ['2', '1'],
+  3: ['3', '2', '1'],
+  100: ['0']
+};
+
 const timeIn = document.getElementById('timein');
 const timeOut = document.getElementById('timeout');
 timeIn.addEventListener('change', () => {
@@ -68,31 +75,7 @@ const priceOfferValidate = () => {
 
 const roomOffer = document.getElementById('room_number');
 const guestOffer = document.getElementById('capacity');
-const oneRoomValidate = () => {
-  if (roomOffer.value === '1') {
-    if (guestOffer.value === '1') {
-      return true;
-    }
-  }
-
-  if (roomOffer.value === '2') {
-    if (guestOffer.value === '1' || guestOffer.value === '2') {
-      return true;
-    }
-  }
-
-  if (roomOffer.value === '3') {
-    if (guestOffer.value === '1' || guestOffer.value === '2' || guestOffer.value === '3') {
-      return true;
-    }
-  }
-
-  if (roomOffer.value === '100') {
-    if (guestOffer.value === '0') {
-      return true;
-    }
-  }
-};
+const hasRoomValidate = () => roomOption[roomOffer.value].includes(guestOffer.value);
 
 pristine.addValidator(
   titleOffer,
@@ -108,7 +91,7 @@ pristine.addValidator(
 
 pristine.addValidator(
   guestOffer,
-  oneRoomValidate,
+  hasRoomValidate,
   'Введите корректное количество комнат или гостей'
 );
 

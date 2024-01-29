@@ -1,32 +1,7 @@
 const picturesInput = document.querySelector('#images');
-const picturesContainer = document.querySelector('.ad-form__upload');
+const picturesContainer = document.querySelector('.ad-form__photo');
 const avatarInput = document.querySelector('#avatar');
 const avatarContainer = document.querySelector('.ad-form-header__preview');
-
-const initPictures = function() {
-  picturesContainer.addEventListener('change', () => {
-    const selectedPicture = picturesInput.files[0];
-    picturesContainer.src = URL.createObjectURL(selectedPicture);
-  });
-
-  picturesInput.addEventListener('change', () => {
-    const existingPics = picturesContainer.querySelectorAll('#images');
-    for (const existingPic of existingPics) {
-      existingPic.remove();
-    }
-    const apartmentPictures = picturesInput.files;
-    for (const apartmentPicture of apartmentPictures){
-      const imgContainer = document.createElement('div');
-      imgContainer.classList.add('images');
-      const newImg = document.createElement('img');
-      newImg.classList.add('picture');
-      newImg.src = URL.createObjectURL(apartmentPicture);
-      imgContainer.appendChild(newImg);
-
-      picturesContainer.appendChild(imgContainer);
-    }
-  });
-};
 
 const initAvatar = function() {
   avatarContainer.addEventListener('change', () => {
@@ -41,16 +16,38 @@ const initAvatar = function() {
     }
     const apartmentAvatares = avatarInput.files;
     for (const apartmentAvatar of apartmentAvatares){
-      const imgContainer = document.createElement('div');
-      imgContainer.classList.add('avatar');
-      const newImg = document.createElement('img');
-      newImg.classList.add('picture');
-      newImg.src = URL.createObjectURL(apartmentAvatar);
-      imgContainer.appendChild(newImg);
+      const avatarWrapper = document.querySelector('.ad-form-header__preview');
+      const newAvatar = document.createElement('img');
+      newAvatar.classList.add('uploader-avatar');
+      newAvatar.src = URL.createObjectURL(apartmentAvatar);
 
-      avatarContainer.appendChild(imgContainer);
+      avatarWrapper.appendChild(newAvatar);
     }
   });
 };
 
-export {initPictures, initAvatar};
+
+const initPicture = function() {
+  picturesContainer.addEventListener('change', () => {
+    const selectedPicture = picturesInput.files[0];
+    avatarContainer.src = URL.createObjectURL(selectedPicture);
+  });
+
+  picturesInput.addEventListener('change', () => {
+    const existingPics = picturesContainer.querySelectorAll('#images');
+    for (const existingPic of existingPics) {
+      existingPic.remove();
+    }
+    const apartmentPictures = picturesInput.files;
+    for (const apartmentPicture of apartmentPictures){
+      const pictureWrapper = document.querySelector('.ad-form__photo');
+      const newPicture = document.createElement('img');
+      newPicture.classList.add('uploader-pic');
+      newPicture.src = URL.createObjectURL(apartmentPicture);
+
+      pictureWrapper.appendChild(newPicture);
+    }
+  });
+};
+
+export { initAvatar, initPicture};

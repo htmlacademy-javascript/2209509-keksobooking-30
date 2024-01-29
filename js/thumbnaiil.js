@@ -1,8 +1,8 @@
-import {TYPE} from './constants.js';
+import {TYPES} from './constants.js';
 const thumbnailTemplate = document.querySelector('#card').content.querySelector('.popup');
 const container = document.querySelector('#map-canvas');
 
-const createThumbnail = ({
+const createThumbnails = ({
   title,
   adress,
   price,
@@ -28,7 +28,7 @@ const createThumbnail = ({
     thumbnail.querySelector('.popup__text--price').number = String(`${ price } ₽/ночь`);
   }
   if (type) {
-    thumbnail.querySelector('.popup__type').textContent = TYPE[type];
+    thumbnail.querySelector('.popup__type').textContent = TYPES[type];
   }
   if (type) {
     thumbnail.querySelector('.popup__text--capacity').number = String(`${ rooms } комнаты для ${ guests } гостей`);
@@ -56,7 +56,7 @@ const createThumbnail = ({
 const renderThumbnails = (popup) => {
   const fragment = document.createDocumentFragment();
   popup.forEach((offer) => {
-    const thumbnaiil = createThumbnail(offer);
+    const thumbnaiil = createThumbnails(offer);
     fragment.append(thumbnaiil);
   });
   container.append(fragment);
